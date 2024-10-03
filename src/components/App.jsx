@@ -54,13 +54,13 @@ function App() {
     initialState
   );
   useEffect(function () {
-    fetch("http://localhost:9000/questions")
+    fetch("http://localhost:3000/questions")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataRecieved", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed" }));
   }, []);
   return (
-    <div className="bg-gray-300 w-1/4 mt-10 p-6 text-center mx-auto rounded-lg py-7">
+    <div className="bg-gray-300 w-1/2 mt-10 p-6 text-center mx-auto rounded-lg py-7">
       <Header />
       <Body>
         {status === "loading" && <Loading />}
